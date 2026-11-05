@@ -18,6 +18,9 @@ p.lead{color:var(--ink2);font-size:15px;margin:0 0 28px}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 @media (max-width:600px){.grid{grid-template-columns:1fr}}
 .card{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:18px}
+.card a.thumb{display:block;margin:-18px -18px 14px;border-bottom:1px solid var(--rule);border-radius:12px 12px 0 0;overflow:hidden;background:var(--bg)}
+.card a.thumb img{display:block;width:100%;aspect-ratio:8/5;object-fit:cover;transition:transform .3s}
+.card a.thumb:hover img{transform:scale(1.03)}
 .card h2{font-size:17px;font-weight:600;margin:0 0 4px}
 .card p{font-size:13px;color:var(--ink2);margin:0 0 14px}
 .card a.open{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-size:13px;font-weight:500;padding:7px 14px;border-radius:8px}
@@ -35,6 +38,7 @@ p.lead{color:var(--ink2);font-size:15px;margin:0 0 28px}
   <p class="lead">Estimated walking volumes on every sidewalk link in Sydney and New York City. Demand models transferred from another city, routed over the sidewalk network, then calibrated to local pedestrian counts.</p>
   <div class="grid">
     <div class="card">
+      <a class="thumb" href="sydney/"><img src="sydney/preview.png" alt="Sydney sidewalk network coloured by estimated weekday pedestrian volume" loading="lazy"></a>
       <h2>Sydney</h2>
       <p>Pedestrians per weekday on 13,291 links. Calibrated to City of Sydney counts, autumn 2025.</p>
       <dl><dt>Calibration R²</dt><dd>0.80 (113 sites)</dd><dt>Validation R²</dt><dd>0.38</dd></dl>
@@ -42,6 +46,7 @@ p.lead{color:var(--ink2);font-size:15px;margin:0 0 28px}
       <a class="dl" href="sydney/Sydney_weekday_link_flows_calibrated.geojson.zip">Download GeoJSON (zip, 0.9 MB)</a>
     </div>
     <div class="card">
+      <a class="thumb" href="nyc/"><img src="nyc/preview.png" alt="Manhattan, Brooklyn and Queens sidewalk network coloured by estimated AM peak-hour pedestrian volume" loading="lazy"></a>
       <h2>New York City</h2>
       <p>Pedestrians in the AM, midday and PM peak hours on 311,041 links. Calibrated to NYC DOT counts, 2018–19.</p>
       <dl><dt>Calibration R²</dt><dd>0.79–0.81 (1,009 sites)</dd><dt>Validation R²</dt><dd>0.59–0.64</dd></dl>
