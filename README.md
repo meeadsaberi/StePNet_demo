@@ -4,6 +4,8 @@ Interactive maps of estimated pedestrian volumes on every sidewalk link, from th
 
 Live site: https://meeadsaberi.github.io/StePNet_demo/
 
+StePNet code and data (Fatemeh Nourmohammadi): https://github.com/fanmdi/StepNet
+
 | City | Map | Data | Units | Counts | Calibration R² | Validation R² |
 |---|---|---|---|---|---|---|
 | Sydney | [sydney/](sydney/) | [GeoJSON zip](sydney/Sydney_weekday_link_flows_calibrated.geojson.zip) (EPSG:7856) | pedestrians per weekday | City of Sydney, autumn 2025, 113 sites | 0.80 | 0.38 |
