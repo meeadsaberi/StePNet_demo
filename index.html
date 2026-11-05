@@ -4,57 +4,69 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>StePNet demo: city-wide pedestrian flows</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f6f5f2;--card:#ffffff;--ink:#1b1b19;--ink2:#55544f;--muted:#8a8984;--rule:#e4e2dc;--accent:#256abf}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#161615;--card:#1f1f1d;--ink:#f1f0ec;--ink2:#b9b8b2;--muted:#85847e;--rule:#34332f;--accent:#6da7ec}}
-:root[data-theme="dark"]{--bg:#161615;--card:#1f1f1d;--ink:#f1f0ec;--ink2:#b9b8b2;--muted:#85847e;--rule:#34332f;--accent:#6da7ec}
+:root{--bg:#f7f6f3;--card:#ffffff;--ink:#121212;--ink2:#3d3d3a;--muted:#77756f;--rule:#dedcd6;--accent:#121212}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#151514;--card:#1d1d1c;--ink:#f1f0ec;--ink2:#c9c8c2;--muted:#8f8e88;--rule:#34332f;--accent:#f1f0ec}}
+:root[data-theme="dark"]{--bg:#151514;--card:#1d1d1c;--ink:#f1f0ec;--ink2:#c9c8c2;--muted:#8f8e88;--rule:#34332f;--accent:#f1f0ec}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.5}
-main{max-width:760px;margin:0 auto;padding:56px 16px 48px}
-h1{font-size:26px;font-weight:600;letter-spacing:-.01em;margin:0 0 8px}
-p.lead{color:var(--ink2);font-size:15px;margin:0 0 28px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-@media (max-width:600px){.grid{grid-template-columns:1fr}}
-.card{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:18px}
-.card a.thumb{display:block;margin:-18px -18px 14px;border-bottom:1px solid var(--rule);border-radius:12px 12px 0 0;overflow:hidden;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Times New Roman",Times,Georgia,serif;line-height:1.55;text-align:center}
+main{max-width:780px;margin:0 auto;padding:56px 16px 48px}
+h1{font-size:38px;font-weight:700;letter-spacing:-.01em;line-height:1.15;margin:0 0 14px}
+p.lead{color:var(--ink2);font-size:19px;font-style:italic;margin:0 auto 22px;max-width:640px}
+.rule{width:64px;height:1px;background:var(--ink);margin:0 auto 22px;opacity:.5}
+p.summary{font-size:17px;color:var(--ink);margin:0 auto 34px;max-width:640px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;text-align:center}
+@media (max-width:600px){.grid{grid-template-columns:1fr} h1{font-size:30px}}
+.card{background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:18px 18px 20px}
+.card a.thumb{display:block;margin:-18px -18px 14px;border-bottom:1px solid var(--rule);overflow:hidden;background:var(--bg);border-radius:4px 4px 0 0}
 .card a.thumb img{display:block;width:100%;aspect-ratio:8/5;object-fit:cover;transition:transform .3s}
 .card a.thumb:hover img{transform:scale(1.03)}
-.card h2{font-size:17px;font-weight:600;margin:0 0 4px}
-.card p{font-size:13px;color:var(--ink2);margin:0 0 14px}
-.card a.open{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-size:13px;font-weight:500;padding:7px 14px;border-radius:8px}
-.card a.dl{display:block;font-size:12.5px;color:var(--ink2);margin-top:10px}
-.card dl{display:grid;grid-template-columns:auto 1fr;gap:2px 10px;font-size:12.5px;color:var(--ink2);margin:0 0 14px;font-variant-numeric:tabular-nums}
+.card h2{font-size:24px;font-weight:700;margin:0 0 6px}
+.card p{font-size:15px;color:var(--ink2);margin:0 0 12px}
+.card dl{display:inline-grid;grid-template-columns:auto auto;gap:2px 12px;font-size:15px;color:var(--ink2);margin:0 0 16px;text-align:left;font-variant-numeric:tabular-nums}
 .card dt{color:var(--muted)}
 .card dd{margin:0}
-.note{font-size:12px;color:var(--muted);margin-top:28px}
-.note a{color:var(--muted)}
+.card a.open{display:inline-block;border:1px solid var(--accent);color:var(--ink);text-decoration:none;font-size:15px;padding:6px 18px;border-radius:2px}
+.card a.open:hover{background:var(--accent);color:var(--bg)}
+.card a.dl{display:block;font-size:14px;color:var(--ink2);margin-top:10px}
+.foot{margin-top:44px;padding-top:20px;border-top:1px solid var(--rule);font-size:13.5px;color:var(--muted);max-width:680px;margin-left:auto;margin-right:auto}
+.foot h3{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);margin:16px 0 4px}
+.foot p{margin:0 0 6px}
+.foot a{color:var(--muted)}
 </style>
 </head>
 <body>
 <main>
   <h1>StePNet demo: city-wide pedestrian flows</h1>
   <p class="lead">Estimated walking volumes on every sidewalk link in Sydney and New York. Origin–destination demand is inferred with models transferred from a source city, assigned to the pedestrian network with a stochastic route choice model, and calibrated to local pedestrian counts.</p>
+  <div class="rule"></div>
+  <p class="summary">Most cities count pedestrians at only a few hundred locations. These maps estimate how many people walk along every street. The underlying models were developed in Brisbane and Seattle and applied to Sydney and New York without being refitted, then adjusted using local counts. After adjustment they match the counted streets closely, and they predict counts held back from the adjustment with moderate accuracy, better in New York than in Sydney. The demos show what a model built in one city can offer another that has only partial count coverage: a complete and consistent picture of walking across the street network.</p>
   <div class="grid">
     <div class="card">
       <a class="thumb" href="sydney/"><img src="sydney/preview.png" alt="Sydney sidewalk network coloured by estimated weekday pedestrian volume" loading="lazy"></a>
       <h2>Sydney</h2>
-      <p>Pedestrians per weekday on 13,291 links. Calibrated to City of Sydney counts, autumn 2025.</p>
-      <dl><dt>Calibration R²</dt><dd>0.80 (113 sites)</dd><dt>Validation R²</dt><dd>0.38</dd></dl>
+      <p>Pedestrians per weekday on 13,291 links. Adjusted to City of Sydney counts, autumn 2025.</p>
+      <dl><dt>Fit to counts (R²)</dt><dd>0.80 (113 sites)</dd><dt>Held-back counts (R²)</dt><dd>0.38</dd></dl><br>
       <a class="open" href="sydney/">Open map</a>
-      <a class="dl" href="sydney/Sydney_weekday_link_flows_calibrated.geojson.zip">Download GeoJSON (zip, 0.9 MB)</a>
+      <a class="dl" href="sydney/Sydney_weekday_link_flows_calibrated.geojson.zip">Download data (GeoJSON, 0.9 MB)</a>
     </div>
     <div class="card">
-      <a class="thumb" href="nyc/"><img src="nyc/preview.png" alt="Manhattan, Brooklyn and Queens sidewalk network coloured by estimated AM peak-hour pedestrian volume" loading="lazy"></a>
+      <a class="thumb" href="nyc/"><img src="nyc/preview.png" alt="Manhattan, Brooklyn and Queens sidewalk network coloured by estimated morning peak-hour pedestrian volume" loading="lazy"></a>
       <h2>New York</h2>
-      <p>Pedestrians in the AM, midday and PM peak hours on 311,041 links. Calibrated to NYC DOT counts, 2018–19.</p>
-      <dl><dt>Calibration R²</dt><dd>0.79–0.81 (1,009 sites)</dd><dt>Validation R²</dt><dd>0.59–0.64</dd></dl>
+      <p>Pedestrians in the morning, midday and evening peak hours on 311,041 links. Adjusted to NYC DOT counts, 2018–19.</p>
+      <dl><dt>Fit to counts (R²)</dt><dd>0.79–0.81 (1,009 sites)</dd><dt>Held-back counts (R²)</dt><dd>0.59–0.64</dd></dl><br>
       <a class="open" href="nyc/">Open map</a>
-      <a class="dl" href="nyc/NYC_link_flows_calibrated.geojson.zip">Download GeoJSON (zip, 23 MB)</a>
+      <a class="dl" href="nyc/NYC_link_flows_calibrated.geojson.zip">Download data (GeoJSON, 23 MB)</a>
     </div>
   </div>
-  <p class="note">Validation: each count site predicted with its own count left out (random 20% splits). Method from <a href="https://github.com/fanmdi/StepNet" target="_blank" rel="noopener">StePNet</a>. Nourmohammadi, Rashidi &amp; Saberi (2026), <a href="https://www.nature.com/articles/s44333-026-00134-z" target="_blank" rel="noopener">npj Sustain. Mobil. Transp. 3, 65</a>.</p>
+  <div class="foot">
+    <h3>Strengths</h3>
+    <p>The maps cover every street, using models built elsewhere and a limited number of local counts. The adjustment is applied citywide first, so estimates do not jump in the immediate area of count locations. Each map reports both how closely it matches the counts used and how well it predicts counts it was not given.</p>
+    <h3>Limitations</h3>
+    <p>Accuracy declines with distance from counted streets, and most counts are taken on busy streets, so quiet residential streets are the least tested. The New York model does not separately represent trips to and from subway stations or by visitors, and its three time periods share one underlying travel pattern. In Sydney, modelled trips are longer than typical walking trips (about 1.9 km), so total trip numbers are uncertain even where street volumes fit well. The maps are best used to compare streets and identify busy corridors, rather than as exact counts for individual streets.</p>
+    <h3>Source</h3>
+    <p>Nourmohammadi, F., Rashidi, T. &amp; Saberi, M. Hierarchical organization of pedestrian mobility persists across cities. <i>npj Sustain. Mobil. Transp.</i> 3, 65 (2026). <a href="https://doi.org/10.1038/s44333-026-00134-z" target="_blank" rel="noopener">doi.org/10.1038/s44333-026-00134-z</a> · Code: <a href="https://github.com/fanmdi/StepNet" target="_blank" rel="noopener">github.com/fanmdi/StepNet</a></p>
+  </div>
 </main>
 </body>
 </html>
