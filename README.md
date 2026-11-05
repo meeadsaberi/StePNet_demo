@@ -6,6 +6,8 @@ Live site: https://meeadsaberi.github.io/StePNet_demo/
 
 StePNet code and data (Fatemeh Nourmohammadi): https://github.com/fanmdi/StepNet
 
+Paper: Nourmohammadi, F., Rashidi, T. & Saberi, M. Hierarchical organization of pedestrian mobility persists across cities. *npj Sustain. Mobil. Transp.* 3, 65 (2026). https://doi.org/10.1038/s44333-026-00134-z
+
 | City | Map | Data | Units | Counts | Calibration R² | Validation R² |
 |---|---|---|---|---|---|---|
 | Sydney | [sydney/](sydney/) | [GeoJSON zip](sydney/Sydney_weekday_link_flows_calibrated.geojson.zip) (EPSG:7856) | pedestrians per weekday | City of Sydney, autumn 2025, 113 sites | 0.80 | 0.38 |
