@@ -27,8 +27,8 @@ where yᵢ are observed counts, ŷᵢ the modelled flows on the counted links, a
 
 ## Limitations
 
-- Validation measures how well the maps fill gaps between counts. When whole neighbourhoods (~2 km in NYC, ~800 m in Sydney) are left out instead, R² falls well below zero in NYC and to about 0.06 in Sydney: estimates far from counted streets are much less reliable.
-- NYC counts are single peak hours, while the transferred demand covers longer periods, so the citywide factor combines a unit conversion with a level correction. The three NYC periods start from the same demand matrix, rescaled.
-- Calibration matches street flows, not trip totals. Total trips and average trip length (about 1.3 km in NYC, 1.9 km in Sydney) depend on the transferred destination choice and should be read with caution.
+- The validation shows how well the maps fill gaps between nearby counts. Accuracy drops noticeably in areas with no counts nearby, so estimates there should be treated as indicative.
+- NYC counts cover a single peak hour, while the transferred demand covers a longer period. The citywide factor therefore combines a time-window conversion with a level correction. All three NYC periods start from the same demand matrix, rescaled.
+- Calibration is fitted to street flows, not trip totals. Total trips and average trip length (about 1.3 km in NYC and 1.9 km in Sydney) depend on the transferred destination choice and are less certain than the street flows.
 
 Nourmohammadi, Rashidi & Saberi (2026), [npj Sustainable Mobility and Transport 3, 65](https://www.nature.com/articles/s44333-026-00134-z).
