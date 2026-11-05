@@ -11,7 +11,7 @@ Paper: Nourmohammadi, F., Rashidi, T. & Saberi, M. Hierarchical organization of 
 | City | Map | Data | Units | Counts | Calibration R² | Validation R² |
 |---|---|---|---|---|---|---|
 | Sydney | [sydney/](sydney/) | [GeoJSON zip](sydney/Sydney_weekday_link_flows_calibrated.geojson.zip) (EPSG:7856) | pedestrians per weekday | City of Sydney, autumn 2025, 113 sites | 0.80 | 0.38 |
-| New York City | [nyc/](nyc/) | [GeoJSON zip](nyc/NYC_link_flows_calibrated.geojson.zip) (EPSG:4326) | pedestrians in the AM (8–9), midday (12:30–1:30) and PM (5–6) peak hour | NYC DOT automated counts, 2018–19, 1,009 sites | 0.79–0.81 | 0.59–0.64 |
+| New York | [nyc/](nyc/) | [GeoJSON zip](nyc/NYC_link_flows_calibrated.geojson.zip) (EPSG:4326) | pedestrians in the AM (8–9), midday (12:30–1:30) and PM (5–6) peak hour | NYC DOT automated counts, 2018–19, 1,009 sites | 0.79–0.81 | 0.59–0.64 |
 
 ## Method
 
