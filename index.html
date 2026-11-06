@@ -50,11 +50,11 @@ p.summary{font-size:17px;color:var(--ink);margin:0 auto 34px;max-width:640px}
 <body>
 <main>
   <h1>STePNet: City-Wide Pedestrian Flow Estimation</h1>
-  <p class="lead">Walking is the most universal form of urban travel, yet in most cities pedestrian flows are rarely measured, and the data that exist are sparse, fragmented or limited to a few locations. These maps estimate walking volumes on every street in Sydney and New York City, using travel demand models transferred from Brisbane and Seattle and calibrated to local counts. The estimates closely match the counts used for calibration and show moderate accuracy on counts held out for validation.</p>
+  <p class="lead">Walking is the most universal form of urban travel, yet in most cities pedestrian flows are rarely measured, and the data that exist are sparse, fragmented or limited to a few locations. These maps estimate walking volumes on every street in the City of Sydney and New York City, using travel demand models transferred from Brisbane and Seattle and calibrated to local counts. The estimates closely match the counts used for calibration and show moderate accuracy on counts held out for validation.</p>
   <div class="grid">
     <div class="card">
-      <a class="thumb" href="sydney/"><img src="sydney/preview.png" alt="Sydney sidewalk network coloured by estimated weekday pedestrian volume" loading="lazy"></a>
-      <h2>Sydney</h2>
+      <a class="thumb" href="sydney/"><img src="sydney/preview.png" alt="City of Sydney sidewalk network coloured by estimated weekday pedestrian volume" loading="lazy"></a>
+      <h2>City of Sydney</h2>
       <p>Pedestrians per weekday on 13,291 links. Adjusted to City of Sydney counts, autumn 2025.</p>
       <a class="open" href="sydney/">Open map</a>
       <a class="dl" href="sydney/Sydney_weekday_link_flows_calibrated.geojson.zip">Download data (GeoJSON, 0.9 MB)</a>
@@ -69,9 +69,9 @@ p.summary{font-size:17px;color:var(--ink);margin:0 auto 34px;max-width:640px}
   </div>
   <div class="foot">
     <h3>Strengths</h3>
-    <p>The maps show estimated pedestrian flows across the entire sidewalk networks of Sydney and New York City. The estimates are produced by transferring travel demand models developed in other cities and calibrating them using a limited number of local pedestrian counts. Demand is first scaled at the city level and then calibrated, so streets far from counts are not left at the uncalibrated level and estimates do not spike around count locations. Model performance is evaluated against both the counts used for calibration and independent counts held out for validation.</p>
+    <p>The maps show estimated pedestrian flows across the entire sidewalk networks of the City of Sydney and New York City. The estimates are produced by transferring travel demand models developed in other cities and calibrating them using a limited number of local pedestrian counts. Demand is first scaled at the city level and then calibrated, so streets far from counts are not left at the uncalibrated level and estimates do not spike around count locations. Model performance is evaluated against both the counts used for calibration and independent counts held out for validation.</p>
     <h3>Limitations</h3>
-    <p>Estimation accuracy is generally lower in areas with limited pedestrian count data. Most available counts are collected on busy streets, leaving pedestrian flows on quieter residential streets less well validated. In New York City, the three time periods share the same underlying spatial distribution of trips. In Sydney, modelled walking trips are longer than typical observed walking trips (around 1.9 km), introducing uncertainty in the estimated total number of trips even where pedestrian flows match observed counts. The maps are therefore more suitable for comparing relative pedestrian flows and identifying high-volume corridors than for estimating exact pedestrian volumes at individual locations.</p>
+    <p>Estimation accuracy is generally lower in areas with limited pedestrian count data. Most available counts are collected on busy streets, leaving pedestrian flows on quieter residential streets less well validated. In New York City, the three time periods share the same underlying spatial distribution of trips. In the City of Sydney, modelled walking trips are longer than typical observed walking trips (around 1.9 km), introducing uncertainty in the estimated total number of trips even where pedestrian flows match observed counts. The maps are therefore more suitable for comparing relative pedestrian flows and identifying high-volume corridors than for estimating exact pedestrian volumes at individual locations.</p>
     <h3>Publication and code</h3>
     <p>Nourmohammadi, F., Rashidi, T. &amp; Saberi, M. (2026). Hierarchical organization of pedestrian mobility persists across cities. <i>npj Sustainable Mobility and Transport</i>, 3, 65.<br><a href="https://doi.org/10.1038/s44333-026-00134-z" target="_blank" rel="noopener">Publication</a> · <a href="https://github.com/fanmdi/StepNet" target="_blank" rel="noopener">GitHub repository</a></p>
     <h3>Related research</h3>
