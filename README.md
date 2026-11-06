@@ -35,4 +35,20 @@ where yᵢ are observed counts, ŷᵢ the modelled flows on the counted links, a
 - NYC counts cover a single peak hour, while the transferred demand covers a longer period. The citywide factor therefore combines a time-window conversion with a level correction. All three NYC periods start from the same demand matrix, rescaled.
 - Calibration is fitted to street flows, not trip totals. Total trips and average trip length (about 1.3 km in NYC and 1.9 km in Sydney) depend on the transferred destination choice and are less certain than the street flows.
 
-Nourmohammadi, Rashidi & Saberi (2026), [npj Sustainable Mobility and Transport 3, 65](https://www.nature.com/articles/s44333-026-00134-z).
+## Related research
+
+- Nourmohammadi, F., Rashidi, T. H. & Saberi, M. (2025). Spatial transferability of pedestrian trip generation models. *Transportation Research Part A: Policy and Practice*, 199, 104618. https://doi.org/10.1016/j.tra.2025.104618
+- Lilasathapornkit, T., Nourmohammadi, F. & Saberi, M. (2026). Understanding walking route choice preferences and pedestrian network flows: From individual trajectories to city-scale patterns using empirical data from Sydney. *Transportation Research Part A: Policy and Practice*, 208, 104985. https://doi.org/10.1016/j.tra.2026.104985
+
+## Count data
+
+- Sydney: City of Sydney pedestrian counts, autumn 2025.
+- New York: NYC DOT automated pedestrian counts, 2018–19, as compiled and published by Sevtsuk, A., Basu, R., Liu, L., Alhassan, A. & Kollar, J. (2026). Spatial distribution of foot traffic in New York City and applications for urban planning. *Nature Cities*, 3, 136–145. https://doi.org/10.1038/s44284-025-00383-y
+
+## Licence
+
+Maps and estimated flows are released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Please cite Nourmohammadi, Rashidi & Saberi (2026). Count data remain subject to their original terms.
+
+## Disclaimer
+
+These are model estimates for research and demonstration, provided as is. They are not official counts and should not be the sole basis for design, safety or investment decisions.
