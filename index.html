@@ -15,7 +15,7 @@
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"Source Serif 4","Times New Roman",Times,Georgia,serif;line-height:1.55;text-align:center}
 main{max-width:780px;margin:0 auto;padding:56px 16px 48px}
 h1{font-size:38px;font-weight:700;letter-spacing:-.01em;line-height:1.15;margin:0 0 14px}
-p.lead{color:var(--ink2);font-size:19px;font-style:italic;margin:0 auto 22px;max-width:640px}
+p.lead{color:var(--ink2);font-size:18px;margin:0 auto 34px;max-width:660px}
 .rule{width:64px;height:1px;background:var(--ink);margin:0 auto 22px;opacity:.5}
 p.summary{font-size:17px;color:var(--ink);margin:0 auto 34px;max-width:640px}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;text-align:center}
@@ -41,9 +41,7 @@ p.summary{font-size:17px;color:var(--ink);margin:0 auto 34px;max-width:640px}
 <body>
 <main>
   <h1>StePNet demo: city-wide pedestrian flows</h1>
-  <p class="lead">Estimated walking volumes on every sidewalk link in Sydney and New York. Origin–destination demand is inferred with models transferred from a source city, assigned to the pedestrian network with a stochastic route choice model, and calibrated to local pedestrian counts.</p>
-  <div class="rule"></div>
-  <p class="summary">Most cities count pedestrians at only a few hundred locations. These maps estimate how many people walk along every street. The underlying models were developed in Brisbane and Seattle and applied to Sydney and New York without being refitted, then adjusted using local counts. After adjustment they match the counted streets closely, and they predict counts held back from the adjustment with moderate accuracy, better in New York than in Sydney. The demos show what a model built in one city can offer another that has only partial count coverage: a complete and consistent picture of walking across the street network.</p>
+  <p class="lead">Most cities count pedestrians at only a few hundred locations. These maps estimate walking volumes on every street in Sydney and New York, using demand models developed in Brisbane and Seattle and adjusted to local counts. They match counted streets closely and predict held-back counts with moderate accuracy.</p>
   <div class="grid">
     <div class="card">
       <a class="thumb" href="sydney/"><img src="sydney/preview.png" alt="Sydney sidewalk network coloured by estimated weekday pedestrian volume" loading="lazy"></a>
