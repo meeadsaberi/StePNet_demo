@@ -34,6 +34,7 @@ where yᵢ are observed counts, ŷᵢ the modelled flows on the counted links, a
 - The validation shows how well the maps fill gaps between nearby counts. Accuracy drops noticeably in areas with no counts nearby, so estimates there should be treated as indicative.
 - NYC counts cover a single peak hour, while the transferred demand covers a longer period. The citywide factor therefore combines a time-window conversion with a level correction. All three NYC periods start from the same demand matrix, rescaled.
 - Calibration is fitted to street flows, not trip totals. Total trips and average trip length (about 1.3 km in NYC and 1.9 km in Sydney) depend on the transferred destination choice and are less certain than the street flows.
+- Total walking trip numbers are less certain than street volumes. We estimate roughly 1.4 to 2.5 million walking trips per weekday in the City of Sydney, and roughly 15 to 25 million per weekday across New York City.
 
 ## Related research
 
