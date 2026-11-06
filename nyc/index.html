@@ -83,7 +83,7 @@ input[type=range]{width:150px;accent-color:var(--accent)}
   <div class="htitle">Link colour</div>
   <div class="lbar" id="lbar"></div>
   <div class="ticks"><span>5</span><span>30</span><span>150</span><span>700</span><span>3k+</span></div>
-  <div class="cap">Pedestrians in the peak hour, both directions (log scale). Fainter lines are farther from counts and less certain. Hover a street for its likely range.</div>
+  <div class="cap">Pedestrians in the peak hour, both directions (log scale). Thinner, fainter lines carry fewer pedestrians; lines far from counts are also slightly faded. Hover a street for its likely range.</div>
   </div>
   <div class="htitle">Distribution of link volumes</div>
   <div class="hist"><svg id="hsvg" width="100%" height="96" preserveAspectRatio="none"></svg><div class="htip" id="htip"></div></div>
@@ -138,12 +138,12 @@ function linkLayer(){
     id:'links',
     data:{length:N,startIndices:STARTS,attributes:{getPath:{value:POS,size:2}}},
     _pathType:'open',
-    widthUnits:'pixels',widthMinPixels:0.4,
+    widthUnits:'pixels',widthMinPixels:0.2,
     capRounded:true,jointRounded:true,
     getColor:(_,{index})=>{const v=flow(period,index);if(v<thr)return [0,0,0,0];
       
-      if(v<1)return [...LOWC,150];return [...colArr(v),[235,200,150][conf(period,index)]];},
-    getWidth:(_,{index})=>{const v=flow(period,index);if(v<1||v<thr)return 0.6;return 0.6+tnorm(v)*3.6;},
+      if(v<1)return [...LOWC,90];const a=(70+185*Math.pow(tnorm(v),0.8))*[1,0.85,0.7][conf(period,index)];return [...colArr(v),Math.round(a)];},
+    getWidth:(_,{index})=>{const v=flow(period,index);if(v<1||v<thr)return 0.3;return 0.3+Math.pow(tnorm(v),2)*4.2;},
     updateTriggers:{getColor:[period,thr,ramp,colorBy],getWidth:[period,thr]},
     pickable:true,autoHighlight:true,highlightColor:[236,138,47,255]
   });
