@@ -36,6 +36,14 @@ p.summary{font-size:17px;color:var(--ink);margin:0 auto 34px;max-width:640px}
 .foot h3{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);margin:16px 0 4px}
 .foot p{margin:0 0 6px}
 .foot a{color:var(--muted)}
+.modal{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.35);display:none;align-items:center;justify-content:center;padding:20px}
+.modal.on{display:flex}
+.modal .box{background:var(--card);color:var(--ink);border-radius:6px;padding:22px;max-width:360px;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,.25)}
+.modal h2{font-size:21px;margin:0 0 8px}
+.modal p{font-size:15.5px;color:var(--ink2);margin:0 0 16px}
+.modal .acts{display:flex;gap:10px;justify-content:center}
+.modal button,.modal a{font:inherit;font-size:15px;padding:7px 16px;border:1px solid var(--ink);border-radius:2px;background:transparent;color:var(--ink);text-decoration:none;cursor:pointer}
+.modal a{background:var(--ink);color:var(--bg)}
 </style>
 </head>
 <body>
@@ -74,5 +82,21 @@ p.summary{font-size:17px;color:var(--ink);margin:0 auto 34px;max-width:640px}
     <p>Maps and estimated flows are released under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>; please cite the publication above. Count data remain subject to their original terms. These are model estimates for research and demonstration, provided as is. They are not official counts and should not be the sole basis for design, safety or investment decisions.</p>
   </div>
 </main>
+<div class="modal" id="dv"><div class="box">
+  <h2>Best viewed on a desktop</h2>
+  <p>These maps are designed for larger screens. On a phone, the New York City map opens as a simplified view without street-level details, and Sydney may be slow to navigate.</p>
+  <div class="acts"><button id="dv-no">Cancel</button><a id="dv-go" href="#">Continue</a></div>
+</div></div>
+<script>
+(function(){
+  var small=Math.min(screen.width,screen.height)<=820, touch=matchMedia('(pointer:coarse)').matches;
+  if(!(small&&touch))return;
+  var m=document.getElementById('dv'), go=document.getElementById('dv-go');
+  document.querySelectorAll('a.open, a.thumb').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();go.href=a.getAttribute('href');m.classList.add('on');});});
+  go.addEventListener('click',function(){try{sessionStorage.setItem('nyc-mobile-ok','1');}catch(e){}});
+  document.getElementById('dv-no').onclick=function(){m.classList.remove('on');};
+  m.addEventListener('click',function(e){if(e.target===m)m.classList.remove('on');});
+})();
+</script>
 </body>
 </html>
