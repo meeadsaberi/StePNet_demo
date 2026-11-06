@@ -68,9 +68,9 @@ document.querySelectorAll('.seg button').forEach(b=>b.onclick=()=>{
   document.querySelectorAll('.seg button').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');
   const p=b.dataset.p;flows.setUrl('tiles/'+p+'/{z}/{x}/{y}.png');document.getElementById('phour').textContent=HOUR[p];document.getElementById('stats').textContent=STATS[p];});
 const modal=document.getElementById('modal');
-let seen=false;try{seen=sessionStorage.getItem('nyc-mobile-ok')==='1';}catch(e){}
+let seen=false;try{seen=sessionStorage.getItem('mobile-ok')==='1';}catch(e){}
 if(seen)modal.remove();
-document.getElementById('ok').onclick=()=>{modal.remove();try{sessionStorage.setItem('nyc-mobile-ok','1');}catch(e){}};
+document.getElementById('ok').onclick=()=>{modal.remove();try{sessionStorage.setItem('mobile-ok','1');}catch(e){}};
 })();
 </script>
 </body>
