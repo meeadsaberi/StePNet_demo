@@ -60,11 +60,11 @@ p.summary{font-size:17px;color:var(--ink);margin:0 auto 34px;max-width:640px}
   </div>
   <div class="foot">
     <h3>Strengths</h3>
-    <p>The maps cover every street, using models built elsewhere and a limited number of local counts. The adjustment is applied citywide first, so estimates do not jump in the immediate area of count locations. Each map reports both how closely it matches the counts used and how well it predicts counts it was not given.</p>
+    <p>The maps estimate walking volumes across entire street networks using models developed in other cities and a limited number of local pedestrian counts. Calibration is applied citywide, avoiding abrupt changes in estimated flows around count locations. Each map reports how closely the estimates match the counts used for calibration and how well they predict independent counts held out for validation.</p>
     <h3>Limitations</h3>
-    <p>Accuracy declines with distance from counted streets, and most counts are taken on busy streets, so quiet residential streets are the least tested. The New York model does not separately represent trips to and from subway stations or by visitors, and its three time periods share one underlying travel pattern. In Sydney, modelled trips are longer than typical walking trips (about 1.9 km), so total trip numbers are uncertain even where street volumes fit well. The maps are best used to compare streets and identify busy corridors, rather than as exact counts for individual streets.</p>
-    <h3>Source</h3>
-    <p>Nourmohammadi, F., Rashidi, T. &amp; Saberi, M. Hierarchical organization of pedestrian mobility persists across cities. <i>npj Sustain. Mobil. Transp.</i> 3, 65 (2026). <a href="https://doi.org/10.1038/s44333-026-00134-z" target="_blank" rel="noopener">doi.org/10.1038/s44333-026-00134-z</a> · Code: <a href="https://github.com/fanmdi/StepNet" target="_blank" rel="noopener">github.com/fanmdi/StepNet</a></p>
+    <p>Estimates are generally less reliable in areas with limited pedestrian counts. Most available counts are collected on busy streets, leaving quieter residential streets less well validated. The New York model does not explicitly account for walking trips to and from subway stations or visitor travel, and its three time periods use the same underlying spatial travel pattern. In Sydney, modelled walking trips are longer than typical observed trips (around 1.9 km), introducing uncertainty in the total number of trips even where estimated street volumes match observed counts. The maps are therefore more suitable for comparing relative walking volumes and identifying busy corridors than for estimating exact pedestrian counts on individual streets.</p>
+    <h3>Research and code</h3>
+    <p>Nourmohammadi, F., Rashidi, T. &amp; Saberi, M. (2026). Hierarchical organization of pedestrian mobility persists across cities. <i>npj Sustainable Mobility and Transport</i>, 3, 65. <a href="https://doi.org/10.1038/s44333-026-00134-z" target="_blank" rel="noopener">Publication</a> · <a href="https://github.com/fanmdi/StepNet" target="_blank" rel="noopener">GitHub repository</a></p>
   </div>
 </main>
 </body>
