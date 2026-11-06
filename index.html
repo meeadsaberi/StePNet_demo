@@ -13,13 +13,13 @@
 :root[data-theme="dark"]{--bg:#151514;--card:#1d1d1c;--ink:#f1f0ec;--ink2:#c9c8c2;--muted:#8f8e88;--rule:#34332f;--accent:#f1f0ec}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"Source Serif 4","Times New Roman",Times,Georgia,serif;line-height:1.55;text-align:center}
-main{max-width:1080px;margin:0 auto;padding:56px 16px 48px}
-h1{font-size:52px;font-weight:600;font-variation-settings:"opsz" 60;letter-spacing:-.018em;line-height:1.06;margin:0 auto 18px}
-p.lead{color:var(--ink2);font-size:16.5px;margin:0 auto 34px;max-width:640px}
+main{max-width:852px;margin:0 auto;padding:56px 16px 48px}
+h1{font-size:40px;font-weight:600;font-variation-settings:"opsz" 60;letter-spacing:-.018em;line-height:1.06;margin:0 auto 18px}
+p.lead{color:var(--ink2);font-size:16.5px;margin:0 auto 34px}
 .rule{width:64px;height:1px;background:var(--ink);margin:0 auto 22px;opacity:.5}
 p.summary{font-size:17px;color:var(--ink);margin:0 auto 34px;max-width:640px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;text-align:center;max-width:780px;margin:0 auto}
-@media (max-width:600px){.grid{grid-template-columns:1fr} h1{font-size:34px}}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;text-align:center}
+@media (max-width:600px){.grid{grid-template-columns:1fr} h1{font-size:30px}}
 .card{background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:18px 18px 20px}
 .card a.thumb{display:block;margin:-18px -18px 14px;border-bottom:1px solid var(--rule);overflow:hidden;background:var(--bg);border-radius:4px 4px 0 0}
 .card a.thumb img{display:block;width:100%;aspect-ratio:8/5;object-fit:cover;transition:transform .3s}
@@ -32,7 +32,7 @@ p.summary{font-size:17px;color:var(--ink);margin:0 auto 34px;max-width:640px}
 .card a.open{display:inline-block;border:1px solid var(--accent);color:var(--ink);text-decoration:none;font-size:15px;padding:6px 18px;border-radius:2px}
 .card a.open:hover{background:var(--accent);color:var(--bg)}
 .card a.dl{display:block;font-size:14px;color:var(--ink2);margin-top:10px}
-.foot{margin-top:44px;padding-top:20px;border-top:1px solid var(--rule);font-size:13.5px;color:var(--muted);max-width:680px;margin-left:auto;margin-right:auto}
+.foot{margin-top:44px;padding-top:20px;border-top:1px solid var(--rule);font-size:13.5px;color:var(--muted)}
 .foot h3{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);margin:16px 0 4px}
 .foot p{margin:0 0 6px}
 .foot a{color:var(--muted)}
