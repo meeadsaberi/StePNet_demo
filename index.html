@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>StePNet demo: city-wide pedestrian flows</title>
+<title>StePNet: City-Wide Pedestrian Flow Estimation</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
@@ -14,12 +14,12 @@
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"Source Serif 4","Times New Roman",Times,Georgia,serif;line-height:1.55;text-align:center}
 main{max-width:780px;margin:0 auto;padding:56px 16px 48px}
-h1{font-size:38px;font-weight:700;letter-spacing:-.01em;line-height:1.15;margin:0 0 14px}
+h1{font-size:52px;font-weight:600;font-variation-settings:"opsz" 60;letter-spacing:-.018em;line-height:1.06;margin:0 auto 18px;max-width:720px}
 p.lead{color:var(--ink2);font-size:18px;margin:0 auto 34px;max-width:660px}
 .rule{width:64px;height:1px;background:var(--ink);margin:0 auto 22px;opacity:.5}
 p.summary{font-size:17px;color:var(--ink);margin:0 auto 34px;max-width:640px}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;text-align:center}
-@media (max-width:600px){.grid{grid-template-columns:1fr} h1{font-size:30px}}
+@media (max-width:600px){.grid{grid-template-columns:1fr} h1{font-size:34px}}
 .card{background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:18px 18px 20px}
 .card a.thumb{display:block;margin:-18px -18px 14px;border-bottom:1px solid var(--rule);overflow:hidden;background:var(--bg);border-radius:4px 4px 0 0}
 .card a.thumb img{display:block;width:100%;aspect-ratio:8/5;object-fit:cover;transition:transform .3s}
@@ -40,7 +40,7 @@ p.summary{font-size:17px;color:var(--ink);margin:0 auto 34px;max-width:640px}
 </head>
 <body>
 <main>
-  <h1>StePNet demo: city-wide pedestrian flows</h1>
+  <h1>StePNet: City-Wide Pedestrian Flow Estimation</h1>
   <p class="lead">Walking is essential for access, health and low-carbon travel, yet few cities know how many people walk on their streets. Pedestrian counts are sparse and cover only a small fraction of the network. These maps estimate walking volumes across the entire street networks of Sydney and New York City by transferring travel demand models developed in Brisbane and Seattle and calibrating them against local pedestrian counts. The estimates closely match observed counts used for calibration and show moderate predictive accuracy on counts held out for validation.</p>
   <div class="grid">
     <div class="card">
